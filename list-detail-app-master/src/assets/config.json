@@ -1,0 +1,101 @@
+{
+    "metaTags": {
+        "disableMetaTags": false,
+        "url": "",
+        "title": "",
+        "titleSuffix": "",
+        "image": ""
+    },
+    "api": {
+        "authToken": {
+            "enableAuthentication": false,
+            "path": "",
+            "credentials": {
+                "email": "",
+                "password": ""
+            }
+        },
+        "list": {
+            "path": "",
+            "parameters": [],
+            "searchFieldName": "",
+            "filterFieldName": "",
+            "paginationOffsetName": "",
+            "paginationLimitName": ""
+        },
+        "detail": {
+            "path": "",
+            "parameters": [],
+            "idParameter": "",
+            "idPath": false
+        },
+        "dataPath": [],
+        "image": {
+            "path": [],
+            "idPath": [],
+            "urlPath": []
+        }
+    },
+    "elementFieldMapping": {
+        "id": [],
+        "title": [],
+        "description": [],
+        "internal_link": [],
+        "external_link": [],
+        "external_link_icon": [],
+        "image": [],
+        "source": [],
+        "icons": [],
+        "labels": []
+    },
+    "filters": {
+        "mainFilter": []
+    },
+    "styling": {
+        "theme": "",
+        "themeMainColor": "",
+        "themeTextColor": ""
+    },
+    "settings": {
+        "showSourceTextOnBtn": false,
+        "showSquareImage": false,
+        "useHtmlImage": false
+    },
+    "translation": {
+        "fallbackLanguage": "en",
+        "useLocalStorage": false,
+        "useHtmlLang": false,
+        "translations": {
+            "en": {
+                "title": "App",
+                "search": "search for something here...",
+                "goback": "Go back",
+                "readmore": "Read more at",
+                "externallink": "(link)",
+                "source": "Source: ",
+                "error": "Sorry, something went wrong...",
+                "notfound": "Error 404",
+                "notfoundtext": "Sorry, this page does not exist!",
+                "emptyresult": "Sorry, nothing here...",
+                "prevpage": "Previous Page",
+                "nextpage": "Next Page",
+                "filter": "Filter"
+            },
+            "de": {
+                "title": "App auf Deutsch",
+                "search": "Suchbegriff eingeben...",
+                "goback": "Zurück",
+                "readmore": "Mehr auf ",
+                "externallink": "(Link)",
+                "source": "Quelle: ",
+                "error": "Tut uns leid, da ist etwas schiefgelaufen...",
+                "notfound": "Fehler 404",
+                "notfoundtext": "Tut uns leid, diese Seite gibt es nicht!",
+                "emptyresult": "Tut uns leid, nichts gefunden...",
+                "prevpage": "Vorherige Seite",
+                "nextpage": "Nächste Seite",
+                "filter": "Filter"
+            }
+        }
+    }
+}

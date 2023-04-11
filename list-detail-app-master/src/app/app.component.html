@@ -1,0 +1,20 @@
+<div class="container {{ theme }}">
+    <div class="row header" [style.background-color]="themeMainColor">
+        <div class="col-md-12 text-center">
+            <a [routerLink]="['/']" *ngIf="title" [style.color]="themeTextColor">
+                <h2 class="mb-2 mt-1">{{ title }}</h2>
+            </a>
+        </div>
+    </div>
+    <div class="row searchbar" [style.background-color]="themeMainColor">
+        <div class="p-0" [class.col-sm-2]="filters.length > 0"  [class.hidden]="filters.length === 0">
+            <filter></filter>
+        </div>
+        <div class="p-0" [class.col-sm-10]="filters.length > 0"  [class.col-sm-12]="filters.length === 0">
+            <search></search>
+        </div>
+    </div>
+    <div class="outlet-container" [@routeAnimation]="getAnimation(routerOutlet)">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
+    <div>
+</div>

@@ -1,0 +1,538 @@
+list-detail-app {
+    @import "~bootstrap/scss/functions";
+    @import "~bootstrap/scss/variables";
+    @import "~bootstrap/scss/mixins";
+    @import "~bootstrap/scss/root";
+    @import "~bootstrap/scss/reboot";
+    @import "~bootstrap/scss/type";
+    @import "~bootstrap/scss/images";
+    @import "~bootstrap/scss/code";
+    @import "~bootstrap/scss/grid";
+    @import "~bootstrap/scss/forms";
+    @import "~bootstrap/scss/buttons";
+    @import "~bootstrap/scss/transitions";
+    @import "~bootstrap/scss/dropdown";
+    @import "~bootstrap/scss/input-group";
+    @import "~bootstrap/scss/custom-forms";
+    @import "~bootstrap/scss/card";
+    @import "~bootstrap/scss/pagination";
+    @import "~bootstrap/scss/jumbotron";
+    @import "~bootstrap/scss/media";
+    @import "~bootstrap/scss/list-group";
+    @import "~bootstrap/scss/utilities";
+}
+
+$default-theme-background-color: #000000;
+$default-theme-color: #ffffff;
+
+// Inputs, Buttons, Loaders, etc
+$element-background-color: #ffffff;
+$element-color: #000000;
+$element-hover-color: #f1f1f1;
+
+$size-sm: 576px;
+$size-md: 768px;
+$size-lg: 992px;
+
+list-detail-app {
+    .container {
+        width: 100% !important;
+        min-width: auto !important;
+        max-width: none !important;
+        padding-right: 15px;
+        padding-left: 15px;
+        font-family: Verdana, Geneva, sans-serif;
+
+        &.light {
+            .searchbar {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .input-group-append,
+            a.btn,
+            button {
+                border: 1px solid #ced4da !important;
+            }
+
+            .card {
+                .card-image-container {
+                    div.image-overlay {
+                        color: #000000;
+                    }
+                }
+            }
+
+            .form-control {
+                border-top-color: #ced4da;
+                border-bottom-color: #ced4da;
+                border-left-color: #ced4da;
+                background: $element-background-color;
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .header {
+        background: $default-theme-background-color;
+        padding: 8px;
+        margin-top: 10px;
+
+        a,
+        a:hover {
+            color: $default-theme-color;
+            text-decoration: none;
+        }
+    }
+
+    h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0;
+    }
+
+    .searchbar {
+        background: $default-theme-background-color;
+        padding: 0 16px 16px 16px;
+
+        .form-control {
+            border-top-color: $element-color;
+            border-bottom-color: $element-color;
+            border-left-color: $element-color;
+            background: $element-background-color;
+        }
+
+        .input-group-append {
+            background-color: $element-background-color;
+            border: 1px solid $element-color;
+            border-radius: 0.25rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            line-height: 1;
+
+            .clear {
+                vertical-align: middle;
+                padding: 10px 15px;
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .col-md-12,
+    .col-sm,
+    .col-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .outlet-container {
+        position: relative;
+
+        router-outlet > * {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .dropdown {
+        padding-bottom: 1rem;
+
+        .btn {
+            width: 100%;
+            overflow: hidden;
+            background: $element-background-color;
+            border-color: $element-color;
+        }
+
+        &:hover .dropdown-content {
+            opacity: 1;
+            transform: rotateX(0deg);
+            transform-origin: top;
+        }
+
+        .dropdown-content {
+            opacity: 0;
+            position: absolute;
+            background-color: $element-background-color;
+            width: 100%;
+            margin-top: -5px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            transform: rotateX(90deg);
+            transform-origin: top;
+            transition: all 0.5s ease-in-out;
+
+            div {
+                color: $element-color;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $element-hover-color;
+                }
+            }
+        }
+    }
+
+    list {
+        .col-sm {
+            max-width: 100%;
+        }
+
+        .pagination-container {
+            height: 30px;
+
+            .disabled {
+                opacity: 0;
+                cursor: default;
+            }
+        }
+
+        .pagination-row .col-sm {
+            max-width: 50%;
+        }
+
+        .row {
+            margin-bottom: -0.5rem;
+            margin-left: calc(-1.5rem + 1px);
+            margin-right: calc(-1.5rem + 1px);
+        }
+
+        .card {
+            cursor: pointer;
+        }
+
+        .card-image-container {
+            height: 300px;
+            background-position: center;
+            background-size: cover;
+
+            &.card-image-square {
+                height: auto;
+                padding-bottom: 100%;
+            }
+        }
+
+        .card-body {
+            min-height: 150px;
+            overflow: hidden;
+
+            &.card-body-large {
+                min-height: 180px;
+            }
+        }
+    }
+
+    detail {
+        .card {
+            margin-top: 0.25rem;
+
+            .card-image-container {
+                width: 100%;
+            }
+
+            .card-body {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            background: $default-theme-background-color;
+            color: $default-theme-color;
+            max-width: 100%;
+            min-width: 100%;
+            white-space: normal;
+
+            &:hover {
+                color: $default-theme-color;
+                opacity: 0.8;
+            }
+
+            &.has-icon {
+                span {
+                    vertical-align: super;
+                }
+            }
+
+            .mr-icon {
+                margin-right: 0;
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        // Quickfix for 1px diff between list and detail
+        .page-link {
+            margin-bottom: 1px;
+        }
+    }
+
+    .page-link {
+        font-size: 0.8rem;
+        cursor: pointer;
+
+        &.disabled:hover {
+            background: none;
+        }
+    }
+
+    .card {
+        .card-text {
+            line-height: 1.5em;
+        }
+
+        .card-image-container {
+            position: relative;
+
+            div.image-overlay {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: linear-gradient(transparent, $default-theme-background-color);
+                color: $default-theme-color;
+                padding: 25px 5px 5px 5px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            div.image-html {
+                overflow: hidden;
+                max-height: 100%;
+                text-align: center;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        .card-source {
+            margin-top: -0.8rem;
+        }
+
+        .card-labels span {
+            color: $default-theme-color;
+            background: $default-theme-background-color;
+            padding: 2px 5px 3px 5px;
+            border-radius: 5px;
+        }
+
+        .card-icons img {
+            width: 32px;
+            height: auto;
+        }
+    }
+}
+
+@media (min-width: $size-sm) {
+    list-detail-app {
+        h2 {
+            font-size: 1.6rem !important;
+        }
+
+        .dropdown {
+            padding-right: 1rem;
+            padding-bottom: 0;
+        }
+
+        list {
+            .col-sm {
+                max-width: 50% !important;
+                flex: 1 0 50%;
+            }
+
+            .card-body {
+                max-height: 150px;
+
+                &.card-body-large {
+                    max-height: 190px;
+                }
+            }
+        }
+
+        detail {
+            .btn {
+                min-width: 262px;
+
+                span {
+                    display: inline-block;
+                }
+
+                .mr-icon {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $size-md) {
+    list-detail-app {
+        detail {
+            .card {
+                flex-direction: row;
+
+                .card-image-container {
+                    width: 50%;
+                }
+
+                .card-body {
+                    width: 50%;
+                }
+            }
+
+            .btn {
+                span {
+                    display: block;
+                }
+
+                .mr-icon {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $size-lg) {
+    list-detail-app {
+        list .card-body {
+            min-height: 130px;
+            max-height: 130px;
+
+            &.card-body-large {
+                min-height: 180px;
+                max-height: 180px;
+            }
+        }
+
+        detail .btn {
+            span {
+                display: inline-block;
+            }
+
+            .mr-icon {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
+
+list-detail-app {
+    .loader-container {
+        position: absolute;
+        background: $element-background-color;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            width: 16px;
+            position: absolute;
+            background: $element-background-color;
+            height: 100%;
+            left: -16px;
+            top: 0;
+        }
+
+        &::after {
+            content: "";
+            width: 16px;
+            position: absolute;
+            background: $element-background-color;
+            height: 100%;
+            right: -16px;
+            top: 0;
+        }
+    }
+
+    list {
+        .loader-container {
+            overflow: inherit;
+        }
+    }
+
+    .loader {
+        font-size: 10px;
+        margin: 50px auto;
+        text-indent: -9999em;
+        width: 11em;
+        height: 11em;
+        border-radius: 50%;
+        background: $element-background-color;
+        background: -moz-linear-gradient(left, #dddddd 10%, rgba(255, 255, 255, 0) 42%);
+        background: -webkit-linear-gradient(left, #dddddd 10%, rgba(255, 255, 255, 0) 42%);
+        background: -o-linear-gradient(left, #dddddd 10%, rgba(255, 255, 255, 0) 42%);
+        background: -ms-linear-gradient(left, #dddddd 10%, rgba(255, 255, 255, 0) 42%);
+        background: linear-gradient(to right, #dddddd 10%, rgba(255, 255, 255, 0) 42%);
+        position: relative;
+        -webkit-animation: animationload 1.4s infinite linear;
+        animation: animationload 1.4s infinite linear;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .loader::before {
+        width: 50%;
+        height: 50%;
+        background: #dddddd;
+        border-radius: 100% 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+    }
+
+    .loader::after {
+        background: $element-background-color;
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+        content: '';
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@-webkit-keyframes animationload {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animationload {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

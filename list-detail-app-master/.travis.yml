@@ -1,0 +1,16 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - "12"
+  - "10"
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - npm run build
+  - npm run lint
+  - npm run stylelint
+  - npm run test:coverage
