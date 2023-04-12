@@ -37,7 +37,7 @@ jobs:
     # deploy web app using Azure credentials
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: 'angularJS10Node14'
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'Production'
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
