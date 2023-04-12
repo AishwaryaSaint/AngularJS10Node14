@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME: angularJS10Node14   # set this to your application's name
+  AZURE_WEBAPP_NAME: 'angularJS10Node14'   # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'dist'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.x'                # set this to the node version to use
 
@@ -37,7 +37,8 @@ jobs:
     # deploy web app using Azure credentials
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        app-name: 'angularJS10Node14'
+        slot-name: 'Production'
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     # Azure logout 
